@@ -116,3 +116,43 @@ button {
     text-align: center;
 }
 
+/* Mobile devices */
+
+@media screen and (max-width: 600px) {
+
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+
+    .memory-card {
+        height: 65px;
+        font-size: 1.5rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button,
+    select {
+        width: 100%;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        width: 95%;
+    }
+}
