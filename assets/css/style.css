@@ -100,3 +100,19 @@ button {
     transform: scale(0.95);
 }
 
+/* Modal */
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
