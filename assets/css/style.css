@@ -130,9 +130,18 @@ button {
         font-size: 1.5rem;
     }
 
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
+   .stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1rem;
     }
+
+    .stat-card {
+        width: 100%;
+        max-width: 250px;
+    }
+}
 
     .controls {
         flex-direction: column;
@@ -155,4 +164,3 @@ button {
     main {
         width: 95%;
     }
-}
