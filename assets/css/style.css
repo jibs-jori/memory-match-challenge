@@ -164,3 +164,16 @@ button {
     main {
         width: 95%;
     }
+    
+/* Desktop */
+
+@media screen and (min-width: 992px) {
+
+    .memory-card {
+        height: 130px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
