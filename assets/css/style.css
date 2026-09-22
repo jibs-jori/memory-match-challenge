@@ -51,3 +51,19 @@ button {
     border-radius: 8px;
     cursor: pointer;
 }
+
+/* Statistics */
+
+.stats {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
