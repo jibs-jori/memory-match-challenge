@@ -72,9 +72,7 @@ button {
 .game-board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem;
-    max-width: 700px;
-    margin: 2rem auto;
+    gap: 1rem;
 }
 
 .memory-card {
@@ -123,23 +121,25 @@ button {
 @media screen and (max-width: 600px) {
 
     .game-board {
+        grid-template-columns: repeat(4, 1fr);
         gap: 0.5rem;
     }
 
     .memory-card {
-        height: 70px;
-        font-size: 1.75rem;
+        height: 65px;
+        font-size: 1.5rem;
     }
 
-    .stats {
+   .stats {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        grid-template-columns: 1fr;
         justify-items: center;
+        gap: 1rem;
     }
 
     .stat-card {
         width: 100%;
+        max-width: 250px;
     }
 }
 
