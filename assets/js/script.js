@@ -11,6 +11,13 @@ const cardSymbols = [
     "🍒","🍒"
 ];
 
+let firstCard = null;
+let secondCard = null;
+
+let lockBoard = false;
+
+let moves = 0;
+
 function shuffleCards(array) {
 
 for (let i = array.length - 1; i > 0; i--) {
@@ -23,6 +30,8 @@ Math.floor(Math.random() * (i + 1));
 
 return array;
 }
+
+
 
 function createBoard() {
 
@@ -44,10 +53,41 @@ function createBoard() {
         card.dataset.symbol = symbol;
 
         card.textContent = "?";
+        card.addEventListener(
+            "click",
+            flipCard);
 
         gameBoard.appendChild(card);
 
     });
+
+}
+
+function flipCard() {
+
+    if (lockBoard) {
+        return;
+    }
+
+    if (this === firstCard) {
+        return;
+    }
+
+    this.textContent =
+        this.dataset.symbol;
+
+    this.classList.add("flipped");
+
+    if (!firstCard) {
+
+        firstCard = this;
+
+        return;
+    }
+
+    secondCard = this;
+
+    checkForMatch();
 
 }
 
