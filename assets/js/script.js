@@ -17,6 +17,7 @@ let secondCard = null;
 let lockBoard = false;
 
 let moves = 0;
+let matches = 0;
 
 function shuffleCards(array) {
 
@@ -124,16 +125,29 @@ startButton.addEventListener(
 
 function disableCards() {
 
-    firstCard.classList.add(
-        "matched"
+    firstCard.classList.add("matched");
+
+    secondCard.classList.add("matched");
+
+    firstCard.removeEventListener(
+        "click",
+        flipCard
     );
 
-    secondCard.classList.add(
-        "matched"
+    secondCard.removeEventListener(
+        "click",
+        flipCard
     );
+
+    matches++;
+
+    document.getElementById(
+        "match-count"
+    ).textContent = matches;
+
+    checkWin();
 
     resetBoard();
-
 }
 
 function unflipCards() {
