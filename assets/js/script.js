@@ -91,6 +91,29 @@ function flipCard() {
 
 }
 
+function checkForMatch() {
+
+    moves++;
+
+    document.getElementById(
+        "move-count"
+    ).textContent = moves;
+
+    const isMatch =
+        firstCard.dataset.symbol ===
+        secondCard.dataset.symbol;
+
+    if (isMatch) {
+
+        disableCards();
+
+    } else {
+
+        unflipCards();
+
+    }
+}
+
 const startButton =
     document.getElementById("start-btn");
 
@@ -98,3 +121,51 @@ startButton.addEventListener(
     "click",
     createBoard
 );
+
+function disableCards() {
+
+    firstCard.classList.add(
+        "matched"
+    );
+
+    secondCard.classList.add(
+        "matched"
+    );
+
+    resetBoard();
+
+}
+
+function unflipCards() {
+
+    lockBoard = true;
+
+    setTimeout(() => {
+
+        firstCard.textContent = "?";
+
+        secondCard.textContent = "?";
+
+        firstCard.classList.remove(
+            "flipped"
+        );
+
+        secondCard.classList.remove(
+            "flipped"
+        );
+
+        resetBoard();
+
+    }, 1000);
+
+}
+
+function resetBoard() {
+
+    firstCard = null;
+
+    secondCard = null;
+
+    lockBoard = false;
+
+}
